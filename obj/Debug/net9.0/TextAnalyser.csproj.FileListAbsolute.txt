@@ -12,3 +12,4 @@
 /Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.pdb
 /Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.genruntimeconfig.cache
 /Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/ref/TextAnalyser.dll
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.sourcelink.json

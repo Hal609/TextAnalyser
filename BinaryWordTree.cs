@@ -92,7 +92,7 @@ namespace TextAnalyser
       {
          string longestWord = "";
          GetLongestWord(root, ref longestWord);
-         Console.WriteLine("The longest word in the text is {0} at {1} characters", longestWord, longestWord.Length);
+         Console.WriteLine("The longest word in the text is {0} at {1} characters.", longestWord, longestWord.Length);
       }
 
 
@@ -111,7 +111,7 @@ namespace TextAnalyser
          string mostUsedWord = "";
          int mostUsedCount = 0;
          GetMostUsedWord(root, ref mostUsedCount, ref mostUsedWord);
-         Console.WriteLine("The most frequently occurring word in the text is '{0}' at {1} occurrences", mostUsedWord, mostUsedCount);
+         Console.WriteLine("The most frequently occurring word in the text is '{0}' at {1} occurrences.", mostUsedWord, mostUsedCount);
       }
 
       void GetMostUsedWord(WordLeaf? node, ref int highestOccur, ref string mostUsedWord)
