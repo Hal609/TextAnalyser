@@ -1,0 +1,14 @@
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/bin/Debug/net9.0/TextAnalyser
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/bin/Debug/net9.0/TextAnalyser.deps.json
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/bin/Debug/net9.0/TextAnalyser.runtimeconfig.json
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/bin/Debug/net9.0/TextAnalyser.dll
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/bin/Debug/net9.0/TextAnalyser.pdb
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.GeneratedMSBuildEditorConfig.editorconfig
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.AssemblyInfoInputs.cache
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.AssemblyInfo.cs
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.csproj.CoreCompileInputs.cache
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.dll
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/refint/TextAnalyser.dll
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.pdb
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/TextAnalyser.genruntimeconfig.cache
+/Users/hal/Documents/MScAI/Spring Term/Algorithms and Data Structures/C#/TextAnalyser/obj/Debug/net9.0/ref/TextAnalyser.dll
