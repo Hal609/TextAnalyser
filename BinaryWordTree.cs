@@ -18,7 +18,7 @@ namespace TextAnalyser
 
 
       // Appends a new node with the given value in alphabetical order.
-      public void Append(WordInfo value)
+      public void Append(WordInfo value, int lineNum)
       {
          WordLeaf newNode = new WordLeaf(value, null, null);
          if (root is null)
@@ -55,6 +55,7 @@ namespace TextAnalyser
                else
                {
                   currentNode.Value.occurrences++;
+                  currentNode.Value.lineLocations.Append(lineNum);
                   break;
                }
             }
@@ -86,6 +87,7 @@ namespace TextAnalyser
          string text = "word,count";
          InOrderString(root, ref text);
          File.WriteAllText(fileName, text);
+         Console.WriteLine("All unique words and their number of occurrences written to file: '{0}'", fileName);
       }
 
       public void PrintLongestWord()
@@ -127,20 +129,19 @@ namespace TextAnalyser
          GetMostUsedWord(node.Right, ref highestOccur, ref mostUsedWord);
       }
 
-      public int Search(WordLeaf? root, string toFind)
+      public WordInfo? Search(WordLeaf? root, string toFind)
       {
          if (root == null)
          {
-            Console.WriteLine("The word '{0}' is not present in the text file.", toFind);
-            return 0;
+            return null;
          }
 
          int orderDif = toFind.CompareTo(root.Value.text);
 
          if (orderDif == 0)
          {
-            Console.WriteLine("The word '{0}' occurs {1} times.", toFind, root.Value.occurrences);
-            return root.Value.occurrences;
+
+            return root.Value;
          }
          else if (orderDif < 0) { return Search(root.Left, toFind); }  // Item is less than root so look left
          else { return Search(root.Right, toFind); }  // Item is more than root so look right

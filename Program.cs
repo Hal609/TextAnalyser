@@ -154,6 +154,22 @@ Pick number: ");
       return Console.ReadLine();
    }
 
+   static void ShowLineLocations()
+   {
+      string toFind = Input("Enter a word to count: ");
+      WordInfo? res = wordsTree.Search(wordsTree.root, toFind);
+      if (res is null) Console.WriteLine("The word '{0}' is not present in the text file.", toFind);
+      else res.PrintLineLocations();
+   }
+
+   static void CountOccurrences()
+   {
+      string toFind = Input("Enter a word to count: ");
+      WordInfo? res = wordsTree.Search(wordsTree.root, toFind);
+      if (res is null) Console.WriteLine("The word '{0}' is not present in the text file.", toFind);
+      else Console.WriteLine("The word '{0}' occurs {1} times.", toFind, res.occurrences);
+   }
+
    static int Main(string[] args)
    {
       PrintTitle();
@@ -170,6 +186,7 @@ Pick number: ");
 
          string curWord = ""; // Empty string to hold the current word as it is built
          int x = 0;           // Counter to tack the number of letters in the 
+         int lineNumber = 1;
 
          while (sr.Peek() >= 0)
          {
@@ -185,6 +202,7 @@ Pick number: ");
                curWord += c;
                x = Math.Min(x + 1, MAX_WORD_LEN - 1);
             }
+            else if (c == '\n') lineNumber++;
             else
             {
                if (x > 0 && curWord.Length > 0)
@@ -192,8 +210,8 @@ Pick number: ");
                   // Remove any trailing apostrophes
                   if (curWord.EndsWith("\'")) curWord = curWord.Remove(curWord.Length - 1);
 
-                  WordInfo newWord = new WordInfo(curWord, 1);
-                  wordsTree.Append(newWord);
+                  WordInfo newWord = new WordInfo(curWord, 1, lineNumber);
+                  wordsTree.Append(newWord, lineNumber);
                }
                curWord = "";
                x = 0;
@@ -210,8 +228,8 @@ Pick number: ");
          if (choice == '3') wordsTree.Print();
          if (choice == '4') wordsTree.PrintLongestWord();
          if (choice == '5') wordsTree.PrintMostCommonWord();
-         if (choice == '6') FindLineInFile(Input("Enter a word to get the line of: "), path);
-         if (choice == '7') wordsTree.Search(wordsTree.root, Input("Enter a word to count: "));
+         if (choice == '6') ShowLineLocations();
+         if (choice == '7') CountOccurrences();
 
          Console.Write("\nPress enter to perform more tasks or ctrl-c to exit.  ");
          Console.Read();

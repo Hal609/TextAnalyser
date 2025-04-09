@@ -15,6 +15,8 @@ public class LinkedList<T> where T : IComparable<T>
       size = 0;
    }
 
+   public override string ToString() => PrintList();
+
    public T Get(int n)
    {
       if (Math.Abs(n) >= size)
@@ -182,18 +184,21 @@ public class LinkedList<T> where T : IComparable<T>
       size--;
    }
 
-   public void PrintList()
+   public string PrintList()
    {
-      Console.Write("[");
+      string output = "";
+
+      output += "[";
       for (int i = 0; i < size; i++)
       {
          T value = Get(i);
          if (i < size - 1)
-            Console.Write("{0}, ", value);
+            output += value + ", ";
          else
-            Console.Write("{0}", value);
+            output += value;
       }
-      Console.WriteLine("]");
+      output += "]";
+      return output;
    }
 
    public bool InList(T toFind)
