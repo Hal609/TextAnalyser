@@ -12,5 +12,4 @@ public class ListItem<T>
       Value = value;
       Next = next;
    }
-
 }

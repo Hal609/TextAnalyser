@@ -185,10 +185,10 @@ Pick number: ");
          Console.WriteLine("\nAnalysing file: {0}", path);
 
          string curWord = ""; // Empty string to hold the current word as it is built
-         int x = 0;           // Counter to tack the number of letters in the 
-         int lineNumber = 1;
+         int x = 0;           // Counter to tack the number of letters in the word
+         int lineNumber = 1;  // Counter for the current line of the text file
 
-         while (sr.Peek() >= 0)
+         while (sr.Peek() > -1)
          {
             // Update spinner to show code in progressing
             if (stopwatch.ElapsedMilliseconds >= 500) { s.UpdateProgress(); stopwatch.Restart(); }
@@ -200,19 +200,18 @@ Pick number: ");
             if (IsAlphabetic(c) || ((c == '\'') && curWord.Length > 0))
             {
                curWord += c;
-               x = Math.Min(x + 1, MAX_WORD_LEN - 1);
+               x = Math.Min(x + 1, MAX_WORD_LEN); // Increase the character number unless it reaches the max length
             }
-            else if (c == '\n') lineNumber++;
-            else
+            else if (c == '\n')
+               lineNumber++;
+            else if (x > 0 && curWord.Length > 0)
             {
-               if (x > 0 && curWord.Length > 0)
-               {
-                  // Remove any trailing apostrophes
-                  if (curWord.EndsWith("\'")) curWord = curWord.Remove(curWord.Length - 1);
+               // Remove any trailing apostrophes
+               if (curWord.EndsWith("\'")) curWord = curWord.Remove(curWord.Length - 1);
 
-                  WordInfo newWord = new WordInfo(curWord, 1, lineNumber);
-                  wordsTree.Append(newWord, lineNumber);
-               }
+               WordInfo newWord = new WordInfo(curWord, 1, lineNumber);
+               wordsTree.Append(newWord, lineNumber);
+
                curWord = "";
                x = 0;
             }
